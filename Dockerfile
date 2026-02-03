@@ -37,3 +37,6 @@ ENV NODE_ENV=production
 USER node
 
 CMD ["node", "dist/index.js"]
+
+
+RUN chmod -R 755 /usr/local/bin /root/.npm-global/bin /app/node_modules/.bin || true
