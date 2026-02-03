@@ -38,5 +38,6 @@ USER node
 
 CMD ["node", "dist/index.js"]
 
-
-RUN chmod -R 755 /usr/local/bin /root/.npm-global/bin /app/node_modules/.bin || true
+RUN find / -name openclaw 2>/dev/null | xargs -I {} chmod 755 {} || true
+RUN chmod 755 /usr/local/bin/openclaw /root/.npm-global/bin/openclaw /app/node_modules/.bin/openclaw || true
+RUN ls -l /usr/local/bin/openclaw /root/.npm-global/bin/openclaw /app/node_modules/.bin/openclaw || true
